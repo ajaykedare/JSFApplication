@@ -21,18 +21,21 @@
         <body>
             <h1><h:outputText value="JSF Application!"/></h1>
             
-        <h:paanelgrid columns="3">
-            <h:outputText id="ot1" value="Username :"/>
-            <h:inputText id="it1" value="" required ="true" requiredMessage="Username can not be empty"/>
-            <h:message for="it1"/>
-            
-            <h:outputText id="ot2" value="Password :"/>
-            <h:inputText id="it2" value="" required ="true" requiredMessage="Passoword can not be empty"/>
-            <h:message for="it2"/>
-            
-            <h:commandButton id="cb1" value="Submit" action=""/>
-            
-        </h:paanelgrid>
+            <h:form>    
+                <h:panelGrid columns="3">
+                    <h:outputText id="ot1" value="Username :"/>
+                    <h:inputText id="it1" value="#{lb.username}" required ="true" requiredMessage="Username can not be empty"/>
+                    <h:message for="it1"/>
+
+                    <h:outputText id="ot2" value="Password :"/>
+                    <h:inputText id="it2" value="#{lb.password}" required ="true" requiredMessage="Passoword can not be empty"/>
+                    <h:message for="it2"/>
+
+                    <h:commandButton id="cb1" value="Submit" action="#{lb.navigateUser()}"/>                    
+                </h:panelGrid>
+                    
+                    
+            </h:form>
         </body>
     </html>
 </f:view>
